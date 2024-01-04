@@ -1,0 +1,15 @@
+@import './../_base/_variables';
+
+.root {
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+
+  &.gvng-hero {
+
+    @include for-phone-only {
+      width: 90% !important;
+      max-width: 90% !important;
+    }
+  }
+}

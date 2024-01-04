@@ -1,0 +1,87 @@
+@import './../_base/_variables';
+
+.root {
+  position: relative;
+
+  .dropdown {
+    display: none;
+    min-width: 160px;
+    background: $white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.102);
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: $global-border-radius;
+
+    &.open {
+      display: block;
+    }
+
+    .item {
+      width: 100%;
+      line-height: 25px;
+      border-bottom: 1px solid $border-color;
+      padding: 10px;
+      font-size: .8rem;
+      color: $secondary-color;
+      transition: .3s ease all;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      &:last-child {
+         border-bottom: 0;
+      }
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 100%; /* At the bottom of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent $white transparent;
+    }
+
+    &.bottom-left {
+      top: calc(100% + 5px);
+      left: 0;
+      transform: none;
+
+      &:after {
+        left: 10px;
+      }
+    }
+
+    &.bottom-right {
+      top: calc(100% + 5px);
+      right: 0;
+      left: auto;
+      transform: none;
+
+      &:after {
+        left: auto;
+        right: 10px;
+      }
+    }
+
+    &.top {
+      top: auto;
+      bottom: calc(100% + 5px);
+
+      &:after {
+        bottom: auto;
+        top: 100%;
+        border-color: $white transparent transparent transparent;
+      }
+    }
+  }
+
+
+}

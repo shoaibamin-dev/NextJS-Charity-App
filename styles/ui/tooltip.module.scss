@@ -1,0 +1,68 @@
+@import './../_base/_variables';
+
+.root {
+  position: relative;
+
+  &:hover {
+
+    .tooltip {
+      display: inline-block;
+    }
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: $white;
+    background: rgba(0, 0, 0, 0.8);
+    transition: .3s ease all;
+    white-space: nowrap;
+    line-height: 25px;
+    font-size: 14px;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 100%; /* At the bottom of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+    }
+
+    &.top {
+      top: auto;
+      bottom: calc(100% + 5px);
+
+      &:after {
+        bottom: auto;
+        top: 100%;
+        border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+      }
+    }
+
+    &.left {
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+
+      left: -10px;
+      transform: translateX(-100%);
+
+      &:after {
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + 5px);
+        border-color: transparent  transparent transparent rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

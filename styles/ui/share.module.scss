@@ -1,0 +1,51 @@
+@import './../_base/_variables';
+
+.item {
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: .2s ease all;
+  width: 24%;
+  margin-right: 1%;
+  display: inline-block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include for-phone-only {
+    width: 49%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .icon {
+    font-size: 40px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 0;
+  }
+
+  .title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    padding-top: 0;
+    font-size: 12px;
+  }
+}

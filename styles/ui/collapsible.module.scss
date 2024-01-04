@@ -1,0 +1,30 @@
+@import './../_base/_variables';
+
+.root {
+  width: 100%;
+  padding: 15px 0;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    .icon {
+      margin-left: 15px;
+    }
+  }
+
+  .description {
+    width: 100%;
+    display: none;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+
+    a {
+      text-decoration: underline;
+      color: $primary-color;
+    }
+  }
+}

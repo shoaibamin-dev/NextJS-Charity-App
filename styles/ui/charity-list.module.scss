@@ -1,0 +1,31 @@
+@import './../_base/_variables';
+
+.root {
+  width: 100%;
+
+  .item {
+    border-bottom: 1px solid $primary-purple-light;
+    color: $primary-purple-dark;
+    padding: 10px;
+    font-size: 13px;
+
+    .header {
+      font-size: 18px;
+      color: $primary-red;
+      font-weight: 500;
+    }
+  }
+}
+
+.emptyState {
+  color: $primary-purple-dark;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  padding: 25%;
+  opacity: 0.7;
+
+  .icon {
+    font-size: 26px;
+  }
+}

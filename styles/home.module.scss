@@ -1,0 +1,72 @@
+@import './_base/_variables';
+
+.container {
+  width: 500px;
+  margin: 50px auto;
+  
+}
+
+
+.InputField{
+
+font-size: 18px;
+border: 2px solid black;
+    border-radius: 50px;
+    text-align: center;
+}
+
+
+.imageParent>div>div{
+  height:133px
+}      
+
+.HomeHeader{
+  top: 176px;
+  left: 22px;
+  height: 56px;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.78px;
+  color: #fff;
+  display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+.Charities {
+
+  height: 56px;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.78px;
+  color: #fff;
+  display: block;
+    position: absolute;
+    top:78px;
+    left: 14px;
+    z-index: 1;
+}
+
+
+
+
+
+.GivintAtGlanceHeading{
+
+  font-family: Poppins;
+    font-size: 25px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.04;
+    letter-spacing: -0.57px;
+    color: #4c5069;
+  }

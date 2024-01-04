@@ -1,0 +1,26 @@
+@import './../_base/_variables';
+
+.root {
+  width: 90%;
+  max-width: 400px;
+  padding: 15px;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: $global-border-radius;
+  z-index: 9999;
+
+  @include for-phone-only {
+    max-width: 90%;
+  }
+
+  &.type--success {
+    background: green;
+    color: white;
+  }
+
+  &.open {
+    display: block;
+  }
+}

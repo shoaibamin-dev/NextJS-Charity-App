@@ -1,0 +1,40 @@
+@import './../_base/_variables';
+
+.root {
+  border-radius: $global-border-radius;
+  box-shadow: 0 0 10px $box-shadow-color;
+  margin-bottom: 25px;
+  background: $background-color;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: $global-border-radius;
+  border-top-right-radius: $global-border-radius;
+}
+
+.extra {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.title {
+  padding: 15px;
+  font-size: 1.25rem;
+}
+
+.content {
+  padding: 15px;
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid $border-color;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

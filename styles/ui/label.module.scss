@@ -1,0 +1,19 @@
+@import './../_base/_variables';
+
+.label {
+  background: $primary-color;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: $white;
+  font-size: .8rem;
+  display: inline-block;
+  margin: 0 3px;
+  line-height: 1.5rem;
+  position: relative;
+  top: -2px;
+
+  &.neutral {
+    background: $neutral-light;
+    color: $primary-purple-dark;
+  }
+}

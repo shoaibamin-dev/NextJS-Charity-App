@@ -1,0 +1,21 @@
+@import './../_base/_variables';
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  .item {
+    width: 33.33333%;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}

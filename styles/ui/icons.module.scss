@@ -1,0 +1,15 @@
+@import './../_base/_variables';
+
+.root {
+
+  & > path {
+    stroke: $secondary-color;
+  }
+}
+
+.active {
+
+  & > path {
+    stroke: $primary-color;
+  }
+}

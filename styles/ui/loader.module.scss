@@ -1,0 +1,57 @@
+@import './../_base/_variables';
+
+.root {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin-left: 10%;
+    transform: translate3d(-50%, -50%, 0);
+
+    .circle {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 100%;
+      animation: rotate180 2s infinite;
+      border: 5px solid transparent;
+      border-top-color: $primary-color;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          left: 10% * ($i - 1);
+          top: 10% * ($i - 1);
+          width: 100% - 20% * ($i - 1);
+          height: 100% - 20% * ($i - 1);
+          animation-delay: 0.5s * ($i - 1);
+        }
+      }
+
+      &.light {
+        border-top-color: $primary-light-color;
+      }
+    }
+  }
+}
+
+@keyframes rotate180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

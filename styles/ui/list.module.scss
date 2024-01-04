@@ -1,0 +1,44 @@
+@import './../_base/_variables';
+
+.root {
+  width: 100%;
+}
+
+.item {
+  padding: 15px;
+  border-bottom: 1px solid $border-color;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: block;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &.hoverable {
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.icon {
+  margin-right: 15px;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  background: $gvng-red;
+  text-align: center;
+  color: $white;
+  border-radius: 12px;
+  font-size: 11px;
+
+  svg {
+    position: relative;
+    left: 1px;
+    top: 1px;
+  }
+}

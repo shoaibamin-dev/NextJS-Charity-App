@@ -1,0 +1,51 @@
+@import './../_base/_variables';
+
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+
+  .item {
+    background: $white;
+    color: $primary-purple-dark;
+    font-weight: 400;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-top: 1px solid $neutral-dark;
+    border-bottom: 1px solid $neutral-dark;
+    cursor: pointer;
+    width: 100%;
+    border-right: 1px solid $neutral-dark;
+
+    &:first-child {
+      border-left: 1px solid $neutral-dark;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-right: 1px solid $neutral-dark;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    &.active {
+      background: $primary-red;
+      color: $white;
+      border-color: $primary-red;
+      font-weight: 600;
+    }
+  }
+
+  &.small {
+
+    .item {
+      font-size: 12px;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+}

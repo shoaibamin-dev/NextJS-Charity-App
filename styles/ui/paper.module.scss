@@ -1,0 +1,75 @@
+@import './../_base/_variables';
+
+.paper {
+  border-radius: $global-border-radius;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.102);
+  margin-bottom: 25px;
+  background: $background-color;
+  position: relative;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  @include for-phone-only {
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $global-border-radius;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
+  &.purple {
+    background: $primary-purple;
+    color: $neutral-light;
+  }
+
+  &.dark-purple {
+    background: $primary-dark-purple-light;
+    color: $neutral-light;
+  }
+
+  &.red {
+    background: $primary-red;
+    color: $neutral-light;
+  }
+
+  &.gray {
+    background: #2E3645;
+    color: $neutral-light;
+  }
+
+  &.graphic-gvng {
+
+    &:after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 460px;
+      height: 241px;
+      content: ' ';
+      background: url('/gvng-illustration.svg');
+      background-size: contain;
+
+      @include for-phone-only {
+        width: 191px;
+        height: 100px;
+      }
+    }
+  }
+}

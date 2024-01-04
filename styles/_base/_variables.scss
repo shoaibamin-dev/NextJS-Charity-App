@@ -1,0 +1,70 @@
+// New color pallete
+
+$white: #ffffff;
+
+$primary-purple: #545A7E;
+$primary-purple-light: #D4D5DE;
+$primary-purple-dark: #4C5069;
+
+$primary-red: #C71C50;
+$primary-red-light: #F1C6D3;
+$primary-red-dark: #9D113C;
+
+$primary-dark-purple: #24224E;
+$primary-dark-purple-light: #24224E;
+$primary-dark-purple-dark: #181634;
+
+// Success
+$success: #169F60;
+$success-light: #C4E7D7;
+$success-dark: #03884A;
+
+// Warning
+$warning: #F5AC39;
+$warning-light: #FCEACD;
+$warning-dark: #E89612;
+
+// Destructive
+$error: #D54A3F;
+$error-light: #F4D1CE;
+$error-dark: #CB3124;
+
+$neutral: #CCCCCC;
+$neutral-light: #F6F7F8;
+$neutral-dark: #999999;
+
+
+// Element colors
+
+$gvng-red: $primary-red;
+$light-gray: #F6F7F8;
+$dark-purple: $primary-purple-dark;
+
+$background-color: $white;
+$primary-color: $gvng-red;
+$primary-light-color: $white;
+$secondary-color: $primary-purple;
+$box-shadow-color: $neutral;
+$border-color: $light-gray;
+$global-border-radius: 12px;
+$navigation-link-color: $neutral-dark;
+
+@mixin for-phone-only {
+  @media (max-width: 799px) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 800px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}

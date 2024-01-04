@@ -1,0 +1,212 @@
+$container-max-width:   100%;
+$desktop-breakpoint:    980px;
+$tablet-min-breakpoint: 661px;
+$tablet-max-breakpoint: 979px;
+$mobile-max-breakpoint: 660px;
+
+@mixin for-phone-only {
+  @media (max-width: 660px) { @content; }
+}
+
+@mixin for-tablet-up {
+  @media (min-width: 661px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 980px) { @content; }
+}
+
+.show-mobile {
+  display: none !important;
+
+  @include for-phone-only {
+    display: inherit !important;
+  }
+}
+
+.hide-mobile {
+
+  @include for-phone-only {
+    display: none !important;
+  }
+}
+
+.container {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+
+  .col {
+
+  }
+
+  &:nth-child(odd) {
+    .col {
+      padding: 1rem 0;
+
+      @include for-phone-only {
+        padding: 0.25rem 0;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    .col {
+      padding: 1rem 0;
+
+      @include for-phone-only {
+        padding: 0.25rem 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .grid {
+
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .d-col-1 {
+    width: 7.05%;
+  }
+
+  .d-col-2 {
+    width: 15.5%;
+  }
+
+  .d-col-3 {
+    width: 23.95%;
+  }
+
+  .d-col-thirds {
+    width: 23.95%;
+  }
+
+  .d-col-4 {
+    width: 32.4%;
+  }
+
+  .d-col-quarters {
+    width: 32.4%;
+  }
+
+  .d-col-5 {
+    width: 40.85%;
+  }
+
+  .d-col-6 {
+    width: 49.3%;
+  }
+
+  .d-col-halfs {
+    width: 49.3%;
+  }
+
+  .d-col-7 {
+    width: 57.75%;
+  }
+
+  .d-col-8 {
+    width: 66.2%;
+  }
+
+  .d-col-9 {
+    width: 74.65%;
+  }
+
+  .d-col-10 {
+    width: 83.1%;
+  }
+
+  .d-col-11 {
+    width: 91.55%;
+  }
+
+  .d-col-12 {
+    width: 100%;
+  }
+
+  .d-col-full {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: $tablet-min-breakpoint) and (max-width: $tablet-max-breakpoint) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .grid {
+    flex-flow: row wrap;
+
+    &:first-child {
+      .t-col-4 {
+        margin-top: 0;
+      }
+
+      .t-col-6 {
+        margin-top: 0;
+      }
+
+      .t-col-12 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .t-col-4 {
+    margin-top: 1rem;
+    width: 31.46%;
+  }
+
+  .t-col-6 {
+    margin-top: 1rem;
+    width: 48.6%;
+  }
+
+  .t-col-12 {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: $mobile-max-breakpoint) {
+  .container {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .grid {
+    flex-flow: row wrap;
+
+    &:first-child {
+
+    }
+  }
+
+  .m-col-6 {
+    margin-top: 1rem;
+    width: 47.2%;
+  }
+
+  .m-col-12 {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

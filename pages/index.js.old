@@ -1,0 +1,101 @@
+import { useEffect, useState } from 'react';
+import Head from 'next/head'
+import { subscribe } from "react-contextual";
+import styles from '@/styles/home.module.scss'
+import { FaEllipsisH } from 'react-icons/fa';
+import { useSnackbar } from '@/_shared/hooks';
+
+import { Button, Paper, Form, Box, Section, Grid, PageHeader, Card, Snackbar, Modal, List, Layouts, Tooltip } from '../ui';
+
+const Home = (props) => {
+
+  console.log(Layouts);
+
+  const { snackbar, openSnackbar } = useSnackbar(2);
+  const [ modalOpen, setModalOpen ] = useState(false);
+
+  return (
+    <Layouts.Dashboard>
+      <PageHeader
+        title="Dashboard"
+        extra={(
+          <Button size="small" inverted={true} onClick={() => setModalOpen(true)}>
+            <FaEllipsisH />
+          </Button>
+        )} />
+      <Section>
+        <Grid.Row>
+          <Grid.Col m={6}>
+            <Box
+              paper={true}
+              title="Information"
+              extra={(
+                <Tooltip content="This is a test">
+                  <Button size="small" inverted={true}><FaEllipsisH /></Button>
+                </Tooltip>
+              )}
+              footer={(<Button fullWidth={true}>Test</Button>)}
+            >
+              <Form.Input fullWidth={true} type="text" />
+            </Box>
+            <Card
+              image={`http://account.ravn.gvng/files/14ad5590-775f-4707-bff0-3fbffb129d37/8dea20e4-18d8-4b18-ba72-129be52126e9.jpeg`}
+              title="This is a test"
+              footer={(
+                <Button onClick={() => { openSnackbar('This feature is currently undergoing maintenance', 'error') }} fullWidth={true} inverted={true}>Action Here</Button>
+              )}
+            >
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </Card>
+          </Grid.Col>
+          <Grid.Col m={6}>
+            <Box paper={true} title="Information" footer={(<Button theme={`secondary`} inverted={true} fullWidth={true}>Test</Button>)}>
+              <Form.Input label="Full Name" fullWidth={true} type="text" />
+              <Form.Input label="Email" fullWidth={true} type="email" />
+              <Form.Input label="Password" fullWidth={true} type="password" />
+              <Form.Select label="State" options={[
+                {
+                  label: 'Kentucky',
+                  value: 'Kentucky'
+                },
+                {
+                  label: 'Test',
+                  value: 'Test'
+                }
+              ]} />
+            </Box>
+
+            <Box
+              paper={true}
+              title="List Test"
+              padding={0}
+            >
+              <List items={[
+                { label: 'Test 1', href: 'http://www.google.com' },
+                { label: 'Test 2' },
+                { label: 'Test 3' },
+              ]} />
+            </Box>
+          </Grid.Col>
+        </Grid.Row>
+      </Section>
+      <Snackbar {...snackbar} />
+      <Modal
+        open={modalOpen}
+        title={"Testing"}
+        onClose={() => setModalOpen(false)}
+        footer={[
+          <Button theme={`secondary`} inverted={true} fullWidth={true} onClick={() => setModalOpen(false)}>
+            Cancel
+          </Button>,
+          <Button theme={`primary`} fullWidth={true} onClick={() => setModalOpen(false)}>
+            Test
+          </Button>
+        ]}>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </Modal>
+    </Layouts.Dashboard>
+  )
+}
+
+export default subscribe()(Home);
